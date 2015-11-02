@@ -1,20 +1,7 @@
-# Cylon.js for Telegram API
-
-Cylon.js (http://cylonjs.com) is a JavaScript framework for robotics, physical computing, and the Internet of Things (IoT). Telegram (https://telegram.org) is a popular messenger on various platform with official bot support.
-
-This repository contains the adaptor to integrate cylon with telegram API. It can be used to send and receive messages with cylon, communicate via messenger.
-
-## How to Use
-
-1) [Follow instructions](https://telegram.me/BotFather) and create own bot.
-
-2) Run this code
-
-```javascript
 'use strict';
 var Cylon = require('cylon');
 
-var token = 'PASTE_TOKEN_HERE'
+var token = process.argv[2];
 
 if(!token) {
   console.log('please pass telegram API token as argument - i cant connect');
@@ -33,6 +20,17 @@ Cylon.robot({
   },
   work: function (me) {
     var api = me.connections.api;
+    /*
+    { message_id: 9,
+      from: { id: 57684913, first_name: 'Andrey', username: 'vkfont' },
+      chat:
+       { id: 57684913,
+         first_name: 'Andrey',
+         username: 'vkfont',
+         type: 'private' },
+      date: 1446472468,
+      text: 'привет василий' }
+     */
     api.on('message', function (message) {
       console.log('message from %s: %s', message.chat.username, message.text);
 
@@ -47,8 +45,3 @@ Cylon.robot({
 });
 
 Cylon.start();
-```
-
-## License
-
-Copyright (c) 2015. Licensed under the Apache 2.0 license.

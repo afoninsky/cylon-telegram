@@ -1,0 +1,26 @@
+{
+	"node": true,
+	"browser": true,
+	"devel": true,
+	"strict": true,
+	"globalstrict": true,
+	"curly": true,
+	"camelcase": false,
+	"eqeqeq": true,
+	"indent": 4,
+	"latedef": true,
+	"newcap": true,
+	"noarg": true,
+	"regexp": true,
+	"unused": true,
+	"undef": true,
+	"globals"   : {
+		"expect"		 : false,
+    "describe"   : false,
+    "it"         : false,
+    "before"     : false,
+    "beforeEach" : false,
+    "after"      : false,
+    "afterEach"  : false
+  }
+}
