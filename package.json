@@ -1,6 +1,6 @@
 {
   "name": "cylon-telegram",
-  "description": "cylon.js driver to communicate with telegram bot ",
+  "description": "cylon.js connection to communicate with telegram bot",
   "version": "1.0.0",
   "devDependencies": {
     "chai": "3.0.0",
