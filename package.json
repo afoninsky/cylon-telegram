@@ -1,7 +1,7 @@
 {
   "name": "cylon-telegram",
-  "description": "cylon.js connection to communicate with telegram bot",
-  "version": "1.0.0",
+  "description": "cylon.js connector to communicate with telegram bot",
+  "version": "1.0.1",
   "devDependencies": {
     "chai": "3.0.0",
     "coveralls": "^2.11.4",
@@ -30,5 +30,9 @@
   "license": "Apache-2.0",
   "pre-push": [
     "npm test"
+  ],
+  "keywords": [
+    "cylon",
+    "telegram"
   ]
 }
