@@ -19,7 +19,7 @@ Cylon.robot({
     api: { adaptor: 'telegram', token: token }
   },
   work: function (me) {
-    var api = me.connections.api;
+    var bot = me.connections.api.bot;
     /*
     { message_id: 9,
       from: { id: 57684913, first_name: 'Andrey', username: 'vkfont' },
@@ -31,14 +31,9 @@ Cylon.robot({
       date: 1446472468,
       text: 'привет василий' }
      */
-    api.on('message', function (message) {
+    bot.on('message', function (message) {
       console.log('message from %s: %s', message.chat.username, message.text);
-
-      api.sendMessage({
-        chat_id: message.chat.id,
-        text: getRandomAnswer(),
-      });
-
+      bot.sendMessage(message.chat.id, getRandomAnswer());
     });
   }
 

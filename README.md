@@ -8,13 +8,15 @@ This repository contains the adaptor to integrate cylon with telegram API. It ca
 
 1) [Follow instructions](https://telegram.me/BotFather) and create own bot.
 
-2) Run this code
+2) Read api [documentation](https://github.com/yagop/node-telegram-bot-api).
+
+3) Run this code
 
 ```javascript
 'use strict';
 var Cylon = require('cylon');
 
-var token = 'PASTE_TOKEN_HERE'
+var token = process.argv[2];
 
 if(!token) {
   console.log('please pass telegram API token as argument - i cant connect');
@@ -32,15 +34,21 @@ Cylon.robot({
     api: { adaptor: 'telegram', token: token }
   },
   work: function (me) {
-    var api = me.connections.api;
-    api.on('message', function (message) {
+    var bot = me.connections.api.bot;
+    /*
+    { message_id: 9,
+      from: { id: 57684913, first_name: 'Andrey', username: 'vkfont' },
+      chat:
+       { id: 57684913,
+         first_name: 'Andrey',
+         username: 'vkfont',
+         type: 'private' },
+      date: 1446472468,
+      text: 'привет василий' }
+     */
+    bot.on('message', function (message) {
       console.log('message from %s: %s', message.chat.username, message.text);
-
-      api.sendMessage({
-        chat_id: message.chat.id,
-        text: getRandomAnswer(),
-      });
-
+      bot.sendMessage(message.chat.id, getRandomAnswer());
     });
   }
 
