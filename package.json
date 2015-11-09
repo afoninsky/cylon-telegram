@@ -1,7 +1,7 @@
 {
   "name": "cylon-telegram",
   "description": "cylon.js connector to communicate with telegram bot",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "devDependencies": {
     "chai": "3.0.0",
     "coveralls": "^2.11.4",
@@ -13,7 +13,7 @@
   },
   "dependencies": {
     "cylon": "1.2.0",
-    "node-telegram-bot": "^0.1.4"
+    "node-telegram-bot-api": "^0.15.0"
   },
   "main": "index.js",
   "scripts": {
